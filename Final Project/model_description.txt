@@ -1,0 +1,33 @@
+- Describe each visualization
+- Talk about how each model works
+- Talk about how each model performs and which hyperparameters exist for each model
+
+
+KNN - Marla
+1. Confusion matrix shows there is little error in predicting our target variable.
+2. This is a supervised learner for classification; the machine learning algorithm is split into two groups based on our target variable.
+3. This model performs well, and the hyperparameter used is 1.
+
+SVM - Lucas
+1. Confusion matrix shows that there is minimal error in predicting our target variable.
+2. Model finds optimal vecotr and margin between datapoints to classify data into two or more categories.
+3. This model performs well, however there are better options (KNN, NN). The most commonly used hyperparameter, and the hyperparameter used in our case, was the "C" variable. The C variable determines the size optimal margin on the hyperplane assigned by the model, thus affecting the accuracy and reliability.
+
+The ROC curve represents the rate of false positives against true poositives in the scope of the entire dataset being run through the model. The area of the curve is the probability that a randomly drawn positive example has a higher decision function than that of a negative example. 
+The precision recall curve represents the tradeoff between the rate of false positives and false negatives.
+
+The most important feature for this model is odor, with the next two being spore print colour and population.
+
+Random Forest - James
+1. There is a confusion matrix that shows the model as being almost error free.
+2. Random Forest models work by creating multiple decision trees which are each based on slightly different portions of the data set. It then runs them all and selects the answer based on which received the most votes. This voting system increases correctness because if multiple models working from different data with different structures all arrive at an answer it is more likely to be correct and because this method reduces the chances of fluke mistakes.
+3. The model is almost perfect, having only 1 false positive and no false negatives in a test sample of 1,625 in a forest of 50 trees, and running in less than a second.
+
+The most important feature for this model is odor, with the next two being spore print colour and gill colour.
+
+
+NN - Alan
+1. Confusion matrix for Neural Network contains very little to no errors, 2-class Precision Recall Curve shows that the model is nearly perfect
+2. Model takes inputs and processes them through hidden layers which eventually gives an output.
+3. The model performs nearly perfectly, with the optimal amount of hidden units in a layer being 40 or more, in one hidden layer
+

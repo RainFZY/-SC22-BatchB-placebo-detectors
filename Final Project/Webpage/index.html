@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>AI Camp - Team Placebo Detectors</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap Icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- SimpleLightbox plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top" style="color: #000000;">Team Placebo Detectors</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#intro" style="color: #000000;">Intro</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#exploration" style="color: #000000;">Data Exploration</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#preprocessing" style="color: #000000;">Data Preprocessing</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#models" style="color: #000000;">ML Models</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#prediction" style="color: #000000;">Prediction</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#conclusion" style="color: #000000;">Conclusion</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#team" style="color: #000000;">Team</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-8 align-self-end">
+                        <h1 class="text-white font-weight-bold">Mushroom Edibility Predictor</h1>
+                        <hr class="divider" />
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <p class="text-white-75 mb-5">Foraging has never been safer!</p>
+                        <a class="btn btn-primary btn-xl" href="#intro">Find Out More</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Intro-->
+        <section class="page-section bg-primary" id="intro">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="text-white mt-0">What does it do?</h2>
+                        <hr class="divider divider-light" />
+                      <p class="text-white-75 mb-4">Our product is a model that informs the user whether <u>the North American Gilled Mushroom is poisonous or edible based on the description of the mushroom's traits.</u></p><p class="text-white-75 mb-4"> It is established on the dataset from Kaggle, it's <u>information of mushrooms is represented as letters</u>, examples are 'p' = poisonous, 'd' = descending, or 'g' = grooves, and it's <u>considered as a classification problem.</u> Before we changed the letters into integers for a better understanding, we decided to convert them into decimals between 0 and 1 instead.</p><p class="text-white-75 mb-4">To solve the North American Gilled Mushroom problem, we created <u>four algorithms that can help determined the mushroom's type</u>, such as the KNN (k-nearest neighbor) model, the SVM (support vector machines) model, the Random Forest model, and the Neural Network model.</p>
+                        <a class="btn btn-light btn-xl" href="https://www.kaggle.com/datasets/ltrahul/mushrooms-classification-dataset" target="_blank">Our Dataset</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Data Exploration-->
+        <section class="page-section" id="exploration">
+            <div class="container px-4 px-lg-5">
+                <h2 class="text-center mt-0">Data Exploration</h2>
+                <hr class="divider" />
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <h3 class="h4 mb-2">Features and Targets</h3>
+                            <p class="text-muted mb-0">Our target variables are 'p' and 'e' for poisonous and edible.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <h3 class="h4 mb-2">Columns</h3>
+                            <p class="text-muted mb-0">Our dataset before preprocessing had 22 columns and the target column class.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+
+                            <h3 class="h4 mb-2">Cleaning</h3>
+                            <p class="text-muted mb-0">We removed two columns from the set for accuracy and readability.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+
+                            <h3 class="h4 mb-2">Size</h3>
+                            <p class="text-muted mb-0">Our final dataset has 20 columns, not including class, and 8,524 rows.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <center>
+    <h2 class="mb-4">Mushroom Features to Know</h2>
+                <hr class="divider divider" />
+                <div class="row justify-content-md-center">
+                    <div class="col-lg-4 col-md-6 text-center">
+                        <div class="mt-5">
+                            <h3 class="h4 mb-2">Mushroom Ring Types</h3>
+                            <img src="./assets/img/mushroom-ring-type.jpg" style="width:600px; height:150px">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 text-center">
+                        <div class="mt-5">
+                            <h3 class="h4 mb-2">Mushroom Gill Attachments</h3>
+                            <img src="./assets/img/mushroom-gill-attachment.jpg" style="width:700px; height:150px">
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-md-center">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <h3 class="h4 mb-2">Mushroom Gill Types</h3>
+                            <img src="./assets/img/gills.jpg" style="width:450px; height:150px">
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <h3 class="h4 mb-2">Spore Print<strong></strong></h3>
+                            <img src="./assets/img/spore__print.jpg" style="width:150px; height:150px">
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-md-center">
+                    <div class="col-lg-4 col-md-6 text-center">
+                        <div class="mt-5">
+                            <h3 class="h4 mb-2">Mushroom Cap Surfaces</h3>
+                            <img src="./assets/img/mushroom-cap-surface.jpg" style="width:650px; height:150px">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 text-center">
+                        <div class="mt-5">
+                            <h3 class="h4 mb-2">Mushroom Cap Shapes</h3>
+                            <img src="./assets/img/mushroom-cap-shape.jpg" style="width:650px; height:150px">
+                        </div>
+                    </div>
+                </div>
+<!--    <div class="container px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+        <h4>Mushroom Ring Type</h4>
+        <img src="./assets/img/mushroom-ring-type.jpg" style="width:600px; height:150px">
+      </div>
+    </div>
+      
+      <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <h4>Mushroom Gill Attachment</h4>
+          <img src="./assets/img/mushroom-gill-attachment.jpg" style="width:700px; height:150px">
+        </div>
+      </div>
+
+      <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg 5 justify-content-center">
+          <h4>Mushroom Gill type</h4>
+          <img src="./assets/img/gills.jpg" style="width:500px; height:150px">
+        </div>
+      </div>
+    </center>
+      -->
+        <!--  Data Exploration  -->
+        <div id="portfolio">
+            <div class="container-fluid p-0">
+                <div class="row g-0">
+                    <div class="col-lg-4 col-sm-6">
+                        <!--Odor Histogram-->
+<!--                         <a class="portfolio-box" href="assets/img/histogram1.html" type='html' title="Histogram" target="_blank"> -->
+                        <a class="portfolio-box" href="assets/img/cap-colour-histogram.png" title="Histogram">
+                            <img class="img-fluid" src="assets/img/mush1.jpg" style="width: 650px; height: 350px" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Histogram</div>
+                                <div class="project-name">Proportion of Poisonous to Palatable Mushrooms by Cap Color</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/population-histogram.png" title="Histogram">
+                            <img style="width: 650px; height: 350px" class="img-fluid" src="assets/img/mush2.jpg" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Histogram</div>
+                                <div class="project-name">Proportion of Poisonous to Palatable Mushrooms by Population Type</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/scatter-matrix.png" title="Scatter Matrix">
+                            <img style="width: 650px; height: 350px" class="img-fluid" src="assets/img/mush3.jpg" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Scatter Plot</div>
+                                <div class="project-name">Scatter Matrix</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/gill-spacing_pie-chart.png" title="Pie Chart">
+                            <img style="width: 650px; height: 350px" class="img-fluid" src="assets/img/mush4.jpg" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Pie Chart</div>
+                                <div class="project-name">Percentage of Poisonous Mushrooms of a Specific Gill Spacing</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/cap-color_pie.png" title="Percentage of Poisonous to Palatable Brown Cap Color Mushrooms">
+                            <img style="width: 650px; height: 350px; object-fit: cover" class="img-fluid" src="assets/img/mush5.jpg" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Pie Chart</div>
+                                <div class="project-name">Percentage of Poisonous to Palatable Brown Cap Color Mushrooms</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/odor-histogram.jpg" title="Histogram">
+                            <img style="width: 650px; height: 350px; object-fit: cover" class="img-fluid" src="assets/img/mush6.jpeg" alt="..." />
+                            <div class="portfolio-box-caption p-3">
+                                <div class="project-category text-white-50">Histogram</div>
+                                <div class="project-name">Proportion of Poisonous to Palatable Mushroom Organized by Odor</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+        <div class="container px-4 px-lg-5" style="margin-top: 50px">
+          <div class="row gx-4 gx-lg-5 justify-content-center">
+              <p class="text-muted mb-0">
+                <h2 class="text-center mt-0">Correlation Matrix Created With Plotly</h2>
+        <br>The goal of a heatmap, such as the one below, is to show how correlated two features are within a given data set, with 1.0 being 100% correlated, and 0.0 being no correlation at all. As you can see, on our heat map, some of the more important scores relate to the correlation between every feature and class, which is our target variable. Upon review of the heatmap, you can see that the higher scoring features when compared to class are gill size and population type, which are 0.54 and 0.3 respectively. However, features that are highly correlated with other features can indirectly be a determining factor in the edibility of a mushroom, such as gill size against odor, which sits at 0.31. We later discovered that odor is one of, if not the most important determining factor in class. This paints a picture of a web of indirectly-determining features that might otherwise be overlooked, even though they still play a role in classification.
+              </p>
+              <iframe width="1200" height="1200" title="Correlation Table of Features" src="./assets/img/heatmap.html"></iframe>
+          </div>
+      </div>
+
+  
+  
+        <!-- Data Preprocessing-->
+        <section class="page-section bg-dark text-white" id="preprocessing">
+            <div class="container px-4 px-lg-5 text-center">
+                <h2 class="mb-4">Data Preprocessing Steps</h2>
+                <hr class="divider divider-light" />
+                <div class="row justify-content-md-center">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-file-x fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Remove Null Values</h3>
+                            <p class="text-muted mb-0">Null values can mess with machine learning.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-table fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Irrelevant Columns</h3>
+                            <p class="text-muted mb-0">Certain columns give useless information.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-sort-alpha-down fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Label Encoding</h3>
+                            <p class="text-muted mb-0">Convert string values into numeric ones!</p>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row justify-content-md-center">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-sort-numeric-down-alt fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Feature Encoding</h3>
+                            <p class="text-muted mb-0">Fits now numeric features between 0 and 1 to improve accuracy.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                      <div class="mt-5">
+                            <div class="mb-2"><i class="bi-file-ruled fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Data Splitting</h3>
+                            <p class="text-muted mb-0">Split test data from training data for machine learning.</p>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </section>
+ 
+          <section class="page-section" id="models">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Machine Learning Models</h2>
+                    <h4 class="section-subheading text-muted" style="text-align: center;">
+                    We tested out four machine learning models with our dataset
+                    </h4>
+                  <hr class="divider" />
+                </div>
+                <h3 style="text-align: left;">K Nearest Neighbor (KNN)</h3>
+                  <center><img src="assets/img/KNN_model_ex.png" alt="KNN model example" style="width:200px"></center>
+                    <li style="text-align: left;" class="text-muted" >This model determines the class of an unknown point by checking the class of 'k' number of its nearest neighbors.</li>
+                  <center><img src="assets/img/cm_KNN.png" alt="KNN confusion matrix" style="width:350px"></center>
+                    <li  style="text-align: left;" class="text-muted" >Without using GridSearchCV (finds optimal hyper parameters) our KNN model was somewhat erroneous with 11 false negatives (shown above). The most optimal KNN model used only 1 nearest neighbor and perfectly predicted test data points (shown below).</li>
+                   <center><img src="assets/img/confusion_perf.png" alt="KNN confusion matrix" style="width:300px"></center>
+                <h3 style="text-align: left; margin-top: 20 pt;">Support Vector Machine</h3>
+                <p style="text-align: left;">
+                    <li  style="text-align: left;" class="text-muted">SVM works by creating a hyperplane, which is an object that has 1 less dimension than the space it's in, that is optimized to have equal distance from all class group. It then creates a margin on the sides of the hyperplane that is meant to be the barrier to how close the lines can get to the hyperplane.
+                  </li></p>
+                  <center><img src="https://miro.medium.com/max/609/0*lyr5-f7HRu34OLvd.png" alt="..." height="300"/></center>
+              <li style="text-align: left" class="text-muted">The Model performs well, however there are better options (KNN). The most commonly used hyperparameter was the "C" variable which determines the size of the margin on the hyperplane assigned by the model, affecting its accuracy and reliability. Our final model had a C value of 5.</li>
+<center><img src="assets/img/confusion_perf.png" alt="SVC confusion matrix" style="width:300px"></center>
+              <li style="text-align: left" class="text-muted">The confusion matrix that we created shows minimal errors on predicting our target variable. The horizontal feature importance bar graph we created shows that the model prioritized odor very highly and ring-color less so but much more than other variables.</li>
+                  <center><img src="assets/img/feat_imps.png" alt="SVC feature importance" style="width:400px"></center>
+                  
+                <h3 style="text-align: left; margin-top: 20 pt;">Random Forest</h3><img src="https://lewtun.github.io/dslectures/images/rf-regression.png" alt="..." height="300" class="center"/>
+                <p style="text-align: left;">
+                    <li  style="text-align: left;" class="text-muted"> Random Forest models work by creating multiple decision trees which are each based on slightly different portion of the data set. It then runs them and selects the answer with a majority rules vote. This voting system helps minimize the effects of mistakes that a single tree would make. </li>
+                  <img src="./assets/img/tree.png" alt="..." height="500" class="center"/>
+                    <li  style="text-align: left;" class="text-muted"> The hyperparameter we used of was n_estimators which determines the number of trees. </li>
+                  <img src="./assets/img/feature_importance.png" alt="..." height="200" class="center"/>
+                    <li  style="text-align: left;" class="text-muted"> The model ran very well, with no mistakes in a forest of 100 trees.</li>
+           <!--         <li class="text-muted">Interestingly enough, unlike the models discussed so far, XGBoost identified number of pregnancies along with the rest
+                        as one of the top features in predicting the risk of cervical
+                        cancer which the American Cancer Society also recognized along with smoking.</li> -->
+                </p>
+              <img src="./assets/img/confusion_perf.png" alt="..." height="200" class="center"/>
+              <h3 style="text-align: left; margin-top: 20pt;">Neural Network</h3>
+                 <li  style="text-align: left;" class="text-muted">Neural Network is used to reflect the behavior of the human brain and allow computer programs to recognize patterns and solve common problems in the fields of AI, ML, and deep learning. Down below shows a figure of the 2-class PR (Precision Recall) curve proving the model is nearly perfect.</li>
+                        <div class="timeline-image">
+                          <center><img src="./assets/img/PR_curve.png" alt="Neural Network pr Curve" style="width:300px"/></center>
+                 <li  style="text-align: left;" class="text-muted">The Neural Network model takes inputs and process them through layers which eventually gives an output. Down below shows a figure of the ROC (Receiver Operating Characteristic) curve proving the model is also nearly perfect.</li>
+                        <div class="timeline-image">
+                          <center><img src="./assets/img/roc_model_diagram.png" alt="Neural Network roc Curve"  style="width:350px"/></center>
+                 <li  style="text-align: left;" class="text-muted">As a result, the Neural Network Model nearly works perfectly, with the optimal amount of hidden units in a layer being 40 or more, in one hidden layer. Down below shows a figure of the Confusion Matrix containing little to no errors. </li>
+                        <div class="timeline-image">
+                          <center><img src="./assets/img/confusion_perf.png" alt="Neural Network confusion matrix" style="width:300px"/></center>
+                          </div>
+                          </div>
+              </div>
+
+      <!--User Prediction-->
+        <section class="page-section" id="prediction">
+            <div class="container px-4 px-lg-5 text-center">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 col-xl-6 text-center">
+                        <h2 class="mt-0">Prediction</h2>
+                        <hr class="divider" />
+                        <p class="text-muted mb-5">Let's make prediction for your customized mushroom</p>
+                    </div>
+                </div>
+  <form action="" method="post">
+  <center>
+  <!-- cap-shape -->
+  <input list="cap-shape" name="cap-shape" placeholder="cap-shape">
+  <datalist id="cap-shape">
+      <option value="x">Convex</option>
+      <option value="f">Flat</option>
+      <option value="k">Knobbed</option>
+      <option value="b">Bell</option>
+      <option value="s">Sunken</option>
+      <option value="c">Conical</option>
+  </datalist>
+  <input list="cap-surface" name="cap-surface" placeholder="cap-surface">
+  <datalist id="cap-surface">
+      <option value="y">Scaly</option>
+      <option value="f">Fibrous</option>
+      <option value="s">Smooth</option>
+      <option value="g">Grooves</option>
+  </datalist>
+  <input list="cap-color" name="cap-color" placeholder="cap-color">
+  <datalist id="cap-color">
+      <option value="n">Brown</option>
+      <option value="w">White</option>
+      <option value="e">Red</option>
+      <option value="y">Yellow</option>
+      <option value="b">Buff (Light Yellowish Brown)</option>
+      <option value="w">White</option>
+      <option value="p">Pink</option>
+      <option value="c">Cinnamon (Brownish Orange)</option>
+      <option value="u">Purple</option>
+      <option value="r">Green</option>
+  </datalist>
+  <input list="bruises" name="bruises" placeholder="bruises">
+  <datalist id="bruises">
+      <option value="t">True</option>
+      <option value="f">False</option>
+  </datalist>
+  <input list="odor" name="odor" placeholder="odor" style="margin-top: 5px">
+  <datalist id="odor">
+      <option value="n">None</option>
+      <option value="f">Foul</option>
+      <option value="y">Fishy</option>
+      <option value="s">Spicy</option>
+      <option value="a">Almond</option>
+      <option value="l">Anise (Black Licorice/Fennel)</option>
+      <option value="p">Pungent</option>
+      <option value="c">Creosote (Fireplace)</option>
+      <option value="m">Musty (Moldy)</option>
+  </datalist>
+  <input list="gill-attachment" name="gill-attachment" placeholder="gill-attachment" style="margin-top: 5px">
+  <datalist id="gill-attachment">
+      <option value="a">Attached</option>
+      <option value="f">Free</option>
+</datalist>
+  <input list="gill-spacing" name="gill-spacing" placeholder="gill-spacing" style="margin-top: 5px">
+  <datalist id="gill-spacing">
+      <option value="c">Close</option>
+      <option value="w">Crowded</option>
+  </datalist>
+  <input list="gill-size" name="gill-size" placeholder="gill-size" style="margin-top: 5px">
+  <datalist id="gill-size">
+      <option value="b">Broad</option>
+      <option value="n">Narrow</option>
+  </datalist>
+  <input list="gill-color" name="gill-color" placeholder="gill-color" style="margin-top: 5px">
+  <datalist id="gill-color">
+      <option value="b">Buff (Light Brownish Yellow)</option>
+      <option value="p">Pink</option>
+      <option value="w">White</option>
+      <option value="n">Brown</option>
+      <option value="g">Grey</option>
+      <option value="h">Chocolate</option>
+      <option value="u">Purple</option>
+      <option value="k">Black</option>
+      <option value="e">Red</option>
+      <option value="y">Yellow</option>
+      <option value="o">Orange</option>
+      <option value="r">Green</option>
+  </datalist>
+  <input list="stalk-shape" name="stalk-shape" placeholder="stalk-shape" style="margin-top: 5px">
+  <datalist id="stalk-shape">
+      <option value="e">Enlarging</option>
+      <option value="t">Tapering</option>
+  </datalist>
+  <input list="stalk-surface-above-ring" name="stalk-surface-above-" placeholder="stalk-surface-above-ring" style="margin-top: 5px">
+  <datalist id="stalk-surface-above-ring">
+      <option value="s">Smooth</option>
+      <option value="f">Fibrous</option>
+      <option value="k">Silky</option>
+      <option value="y">Scaly</option>
+      </datalist>
+  <input list="stalk-surface-below-ring" name="stalk-surface-below-ring" placeholder="stalk-surface-below-ring" style="margin-top: 5px">
+  <datalist id="stalk-surface-below-ring">
+      <option value="s">Smooth (No ring = Same as above ring)</option>
+      <option value="f">Fibrous</option>
+      <option value="k">Silky</option>
+      <option value="y">Scaly</option>
+  </datalist>
+  <input list="stalk-color-above-ring" name="stalk-color-above-ring" placeholder="stalk-color-above-ring" style="margin-top: 5px">
+  <datalist id="stalk-color-above-ring">
+      <option value="w">White</option>
+      <option value="b">Buff</option>
+      <option value="p">Pink</option>
+      <option value="g">Grey</option>
+      <option value="n">Brown</option>
+      <option value="o">Orange</option>
+      <option value="e">Red</option>
+      <option value="c">Cinnamon (Brownish Orange)</option>
+      <option value="y">Yellow</option>
+  </datalist>
+  <input list="stalk-color-below-ring" name="stalk-color-below-ring" placeholder="stalk-color-below-ring" style="margin-top: 5px">
+  <datalist id="stalk-color-below-ring">
+      <option value="w">White (No ring = Same as above ring)</option>
+      <option value="b">Buff</option>
+      <option value="p">Pink</option>
+      <option value="g">Grey</option>
+      <option value="n">Brown</option>
+      <option value="o">Orange</option>
+      <option value="e">Red</option>
+      <option value="c">Cinnamon (Brownish Orange)</option>
+      <option value="y">Yellow</option>
+  </datalist>
+  <input list="veil-color" name="veil-color" placeholder="veil-color" style="margin-top: 5px">
+  <datalist id="veil-color">
+      <option value="w">White</option>
+      <option value="n">Brown</option>
+      <option value="o">Orange</option>
+      <option value="y">Yellow</option>
+</datalist>
+  <input list="ring-number" name="ring-number" placeholder="ring-number" style="margin-top: 5px">
+  <datalist id="ring-number">
+      <option value="o">One</option>
+      <option value="t">Two</option>
+      <option value="n">None</option>
+</datalist>
+  <input list="ring-type" name="ring-type" placeholder="ring-type" style="margin-top: 5px">
+  <datalist id="ring-type">
+      <option value="p">Pendant</option>
+      <option value="n">Cobwebby</option>
+      <option value="e">Evanescent</option>
+      <option value="l">Large</option>
+      <option value="f">Flaring</option>
+      <option value="s">Sheathing</option>
+      <option value="z">Zone</option>
+      <option value="n">None</option>
+  </datalist>
+  <input list="spore-print-color" name="spore-print-color" placeholder="spore-print-color" style="margin-top: 5px">
+  <datalist id="spore-print-color">
+      <option value="w">White</option>
+      <option value="n">Brown</option>
+      <option value="k">Black</option>
+      <option value="h">Chocolate</option>
+      <option value="r">Green</option>
+      <option value="u">Purple</option>
+      <option value="o">Orange</option>
+      <option value="y">Yellow</option>
+      <option value="b">Buff (Light Brownish Yelow)</option>
+  </datalist>
+  <input list="population" name="population" placeholder="population" style="margin-top: 5px">
+  <datalist id="population">
+      <option value="v">Several</option>
+      <option value="y">Solitary</option>
+      <option value="s">Scattered</option>
+      <option value="n">Numerous</option>
+      <option value="a">Abundant</option>
+      <option value="c">Clustered</option>
+  </datalist>
+  <input list="habitat" name="habitat" placeholder="habitat" style="margin-top: 5px">
+  <datalist id="habitat">
+      <option value="d">Woods</option>
+      <option value="g">Grasses</option>
+      <option value="p">Paths</option>
+      <option value="l">Leaves</option>
+      <option value="u">Urban</option>
+      <option value="m">Meadows</option>
+      <option value="w">Waste</option>
+  </datalist>
+              
+  <div class="justify-content-center">
+      <button type="submit" class="btn btn-primary btn-l text-uppercase" style="margin-top: 20px">Submit</button>
+      <br>
+<!--       <table class="table table-dark center" style="margin-top: 20px text-align:center">
+          {{df_html | safe}}
+      </table>
+       <p><h5>Prediction: {{values}}</h5></p> -->
+       
+  </div>
+  </center>
+  </form>
+  </div>
+  </section>
+      <!-- Conclusion-->
+      <conclusion class="bg-light py-5">
+         <section class="page-section bg-primary" id="conclusion">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="text-white mt-0">Conclusion</h2>
+                        <hr class="divider divider-light" />
+                      <p class="text-white-75 mb-4" style="text-align:center">Based on the machine learning models we have used for this project, we discovered that <u>all four algorithms perform well for our data set, making them viable.</u> However, due to the Neural Network's training taking too long, it would be recommended to use the other three algorithms we have on the list to save time.</p> <p class="text-white-75 mb-4" style="text-align:center">When each algorithm observed the dataset of mushrooms solely, we found out that the majority of them use <u>odor, spore print color, gill color, gill size, ring type, and bruises</u> as the most <u>important features to identify a mushroom.<u> The purpose of this study is to encourage mushroom foragers and to shrink the possibility of consuming poisonous mushrooms.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+      </conclusion>
+        <section class="page-section bg-primary" id="team">
+            <div class="container">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 text-center">
+                      <h2 class="text-white mt-0"><u>Our Team</u></h2>
+                        <hr class="divider-light"/>
+            <!-- <p class="text-white-75 mb-4">
+                 Alan Than
+               <p class="text-white-75 mb-4">
+                 Lucas Lockard 
+               <p class="text-white-75 mb-4">
+                 Oswaldo Pascual 
+               <p class="text-white-75 mb-4">
+                 James Gregg
+               <p class="text-white-75 mb-4">
+                 Marla Christopher
+               </p> -->
+                <table style= "width:100%">
+                    <tr>
+                      <td class= "text-white-75 mb-4"><u>Zhuoyu Feng</u></td>
+                        <td> 
+                           <img src= "./assets/img/team_photos/zhuoyu.jpg" width="200" height="200" >
+                        </td>
+                      <td class= "text-white-75 mb-4"><u>Lucas Lockard</u></td>
+                        <td> 
+                           <img src= "./assets/img/team_photos/lucas.jpg" width="200" height="200">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class= "text-white-75 mb-4"><u>James Gregg</u></td>
+                        <td> 
+                           <img src= "./assets/img/team_photos/James.jpg" width="200" height="200">
+                        </td>
+                        <td class= "text-white-75 mb-4"><u>Alan Than</u></td>
+                          <td> 
+                             <img src= "./assets/img/team_photos/alan.jpg" width="200" height="200" style = "object-fit: cover">
+                         </td>
+                      </tr>
+                     <tr>
+                       <td class= "text-white-75 mb-4"><u>Marla Christopher</u></td>
+                        <td>  
+                           <img src= "./assets/img/team_photos/marla.jpg" width="200" height="200">
+                       </td>
+                       <td class= "text-white-75 mb-4"><u>Oswaldo Pascual</u></td>
+                        <td>
+                           <img src= "./assets/img/team_photos/oswaldo.jpg" width="200" height="200">
+                       </td>
+                     </tr>
+                  </table>
+             </div>
+           </div>
+         </div>
+       </section>
+      
+     
+        <!-- Footer-->
+        <footer class="bg-light py-5">
+            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2022 - AI Camp Placebo Detectors</div></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- SimpleLightbox plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>

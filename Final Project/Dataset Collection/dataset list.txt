@@ -1,0 +1,43 @@
+Example:
+Zhuoyu Feng:
+heart-attack-analysis dataset
+https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-analysis-prediction-dataset?select=heart.csv
+1. 300+ rows, 14 cols
+2. has a target column 'output' 0/1, makes it a classification task
+3. all numerical
+4. no missing values
+
+
+
+1 - Lucas Lockard:
+Mushrooms classification dataset
+https://www.kaggle.com/datasets/ltrahul/mushrooms-classification-dataset?resource=download
+1. 8125 rows, 23 columns
+2. has a target column 'class' e/p, makes it a classification task
+3. mostly string, will convert to numerical
+4. no missing values
+
+2 - Oswaldo Pascual:
+Car Sales
+https://www.kaggle.com/datasets/gagandeep16/car-sales
+1. 158 rows, 16 cols
+2. Has a target column 'Sales_in_thousands', makes it a regression task
+3. Most numerical, some categorical
+4. Little missing values
+
+
+3 - Alan Than:
+Student Mental Health
+https://www.kaggle.com/datasets/shariful07/student-mental-health
+1. ~100 rows, 11 cols
+2. Could have three target columns, presence of Depression, Panic Attacks, and Anxiety, maybe combine to show severity?
+3. Mostly string values, can convert some to numerical
+4. No missing values
+
+4 - Marla Christopher:
+airlines predict delay
+https://www.kaggle.com/datasets/jimschacko/airlines-dataset-to-predict-a-delay
+1. 539000 rows, 9 cols
+2. has a target column 'delay' 0/1, makes it a classification task
+3. not all numerical, some categorical
+4. no missing values

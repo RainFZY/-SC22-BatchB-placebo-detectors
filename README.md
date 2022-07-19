@@ -1,1 +1,1 @@
-# -SC22-BatchB-placebo-detectors
+# SC22-BatchB-placebo-detectors
